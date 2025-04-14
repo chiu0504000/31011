@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>記帳本</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #f3e5c0;
+    }
+
+    .left-panel {
+      width: 35%;
+      background-color: #d68b2c;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+      color: #fff;
+    }
+
+    .left-panel h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #000;
+    }
+
+    label {
+      margin-top: 10px;
+      display: block;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input, select {
+      background-color: #fff;
+    }
+
+    button {
+      background-color: #c62828;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .right-panel {
+      width: 65%;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .right-panel h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .record {
+      background-color: #e6e1d0;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left-panel">
+    <h1>簡單記帳本</h1>
+    <form id="recordForm">
+      <label for="date">日期：</label>
+      <input type="date" id="date" required />
+
+      <label for="category">類別：</label>
+      <select id="category">
+        <option value="飲食">飲食</option>
+        <option value="交通">交通</option>
+        <option value="娛樂">娛樂</option>
+        <option value="其他">其他</option>
+      </select>
+
+      <label for="amount">金額：</label>
+      <input type="number" id="amount" required />
+
+      <label for="note">備註：</label>
+      <input type="text" id="note" />
+
+      <button type="submit">新增記帳</button>
+    </form>
+  </div>
+
+  <div class="right-panel">
+    <h2>記帳紀錄</h2>
+    <div id="records"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
